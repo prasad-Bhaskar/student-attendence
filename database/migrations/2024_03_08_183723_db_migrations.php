@@ -57,7 +57,8 @@ return new class extends Migration
             $table->string('last_name', length:50)->nullable();
             $table->string('email', length:50);
             $table->string('mobile', length:15);
-            $table->string('roll_no', length:25)->nullable();
+            $table->string('examination_roll_no', length:25)->nullable();
+            $table->integer('roll_no');
             $table->text('password');
             $table->text('profile_photo')->nullable();
             $table->year('year_of_registration');
