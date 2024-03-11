@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('short_key', length:30)->comment("this is for dynamic data fetch");
             $table->string('branch_code', length:30);
             $table->string('branch_label', length:30);
-            $table->string('shorrt_key', length:30);
             $table->timestamps();
             $table->softDeletes('deleted_at', precision: 0);
             $table->boolean('active')->default(true);
@@ -29,6 +28,7 @@ return new class extends Migration
         Schema::create('semester', function(Blueprint $table){
             $table->uuid('id')->primary();
             $table->string('title', length:30);
+            $table->string('sem_label', length:30);
             $table->string('short_key', length:30)->comment("this is for dynamic data fetch");
             $table->timestamps();
             $table->softDeletes('deleted_at', precision: 0);

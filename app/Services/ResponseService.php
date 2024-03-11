@@ -18,7 +18,10 @@ class ResponseService
         return response()->json($responseData, Response::HTTP_SWITCHING_PROTOCOLS);
     }
 
-    
+    public function internalServerError(string $message, ){
+        $responseData = $this->dataFormat($message, [], Response::HTTP_INTERNAL_SERVER_ERROR);
+        return response()->json($responseData, Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
 
     private function dataFormat(string $message, array $data, int $status){
         return array(['message' => $message, 'data'=>$data, 'status' => $status]);
